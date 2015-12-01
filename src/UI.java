@@ -40,6 +40,10 @@ public class UI extends Application {
 
     final double[][][] coordsRepresentation = {new double[1][2]};
 
+    // Circle Parameters
+    double nodeSize = 10;
+    int iterations = 20;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -99,8 +103,8 @@ public class UI extends Application {
                 alert.setContentText(bracketField.getText());
                 alert.showAndWait();
             }
-            coordsRepresentation[0] = SpringEmbedder.computeSpringEmbedding(100, myGraph.getNumberOfNodes(), myGraph.getEdges(), null);
-            SpringEmbedder.centerCoordinates(coordsRepresentation[0], 10, 400, 10, 400);
+            coordsRepresentation[0] = SpringEmbedder.computeSpringEmbedding(iterations, myGraph.getNumberOfNodes(), myGraph.getEdges(), null);
+            SpringEmbedder.centerCoordinates(coordsRepresentation[0], 50, 550, 50, 550);
             drawShapes(drawPane, coordsRepresentation[0], myGraph.getEdges(), myGraph.getNumberOfNodes());
         });
 
@@ -131,7 +135,7 @@ public class UI extends Application {
 
         // generate Circles
         for (int i = 0; i < coords.length; i++) {
-            Circle currentCircle = new Circle(coords[i][0], coords[i][1], 10, Color.BLACK);
+            Circle currentCircle = new Circle(coords[i][0], coords[i][1], nodeSize, Color.BLACK);
             String toolTipText = "Node " + Integer.toString(i + 1);
             // expand toolTip text with nucleotide and Circle color, if possible
             if(sequenceField.getText().length() > i){
