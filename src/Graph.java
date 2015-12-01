@@ -128,28 +128,5 @@ public class Graph {
         return myArray;
     }
 
-    public static String ArrayToString(int[][] myArray){
-        String result = "";
-        for (int x = 0; x < myArray.length; x++) {
-            result += Integer.toString(x) + ": ";
-            for(int y = 0; y < myArray[x].length; y++){
-                result += Integer.toString(myArray[x][y]) + ", ";
-            }
-            result += "\n";
-        }
-        return result;
-    }
-
-    public static String ArrayToString(double[][] myArray){
-        String result = "";
-        for (int x = 0; x < myArray.length; x++) {
-            result += Integer.toString(x) + ": ";
-            for(int y = 0; y < myArray[x].length; y++){
-                result += Double.toString(myArray[x][y]) + ", ";
-            }
-            result += "\n";
-        }
-        return result;
-    }
 }
 

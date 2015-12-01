@@ -12,4 +12,7 @@ public class myLabels {
     public static String BUTTON_DRAW = "Draw";
 
     public static String CHECKBOX_ANIMATE = "Animate";
+
+    public static String ALERT_TITLE = "Invalid Bracket Notation";
+    public static String ALTERT_MESSAGE = "The bracket notation is invalid. Make sure to close ever opened bracket.";
 }
